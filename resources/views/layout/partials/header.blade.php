@@ -11,10 +11,16 @@
               <a class="nav-link js-scroll-trigger" href="{{ url('/about')}}">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{{ url('/services')}}">Services</a>
+              <a class="nav-link js-scroll-trigger" href="{{ url('/contact')}}">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{{ url('/contact')}}">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="{{ url('/login')}}">Login</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ url('/services')}}">Services</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{{ url('/admin')}}">Admin</a>
             </li>
           </ul>
         </div>
