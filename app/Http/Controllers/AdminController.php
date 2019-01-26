@@ -90,7 +90,7 @@ class AdminController extends Controller
     }
     
     /**
-     * View form Create a new user.
+     * View detail user.
      */
     public function show_user($user_id)
     {
@@ -99,7 +99,7 @@ class AdminController extends Controller
     }
     
     /**
-     * View form update account.
+     * View form update user
      */
     public function form_edit_user($user_id)
     {
@@ -108,7 +108,7 @@ class AdminController extends Controller
     }
     
     /**
-     * Process create a new user.
+     * Process update user.
      */
     public function edit_user(Request $request, $userId)
     {   	 
@@ -142,10 +142,28 @@ class AdminController extends Controller
     }
     
     /**
-     * Process logout userr.
+     * Process logout user.
      */    
     public function logout(){
     	Auth::logout();
     	return redirect('login');
+    }
+    
+    /**
+     * Ajax cal activate user.
+     */
+    public function activate_user(Request $request)
+    {
+    	$user = User::where('id', $request->userId)->first();
+    	$user->update(['active' => 1]);
+    }
+    
+    /**
+     * Ajax cal deactivate user.
+     */
+    public function deactivate_user(Request $request)
+    {
+    	$user = User::where('id', $request->userId)->first();
+    	$user->update(['active' => 0]);
     }
 }

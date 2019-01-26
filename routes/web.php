@@ -28,8 +28,10 @@ Route::group(['middleware' => 'web'], function () {
 	Route::post('/admin_users/create_user', 'AdminController@create_user');
 	Route::post('/admin_users/edit_user/{user_id}', 'AdminController@edit_user');
 	
-	
-	
+	/* Ajax call */
+	Route::post('activate_user', 'AdminController@activate_user');
+	Route::post('deactivate_user', 'AdminController@deactivate_user');
+		
 	/*
 	 Route::group(['middleware' => ['admin']], function() {
 		Route::get('/admin', 'AdminController@index');

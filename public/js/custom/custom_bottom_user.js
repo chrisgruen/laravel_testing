@@ -12,7 +12,7 @@ $('#confirm-delete').on('show.bs.modal', function(e) {
     $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
 });
 
-$('.set-user-notactiv').click(function() {
+$('.user-notactiv').click(function() {
 	 var userId = $(this).attr("id");
 	 var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 	 
@@ -21,7 +21,7 @@ $('.set-user-notactiv').click(function() {
 	 
 	 $.ajax({
 	        type        : 'POST',
-	        url         : 'id/ajax_set_activate_user', 
+	        url         : 'activate_user', 
 	        data        : PostData, 
 	        dataType    : 'json',
 	        success: function(data){
@@ -34,7 +34,7 @@ $('.set-user-notactiv').click(function() {
 	    })	 
 });
 
-$('.set-user-activ').click(function() {
+$('.user-activ').click(function() {
 	 var userId = $(this).attr("id");
 	 var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 	 
@@ -43,7 +43,7 @@ $('.set-user-activ').click(function() {
 	 
 	 $.ajax({
 	        type        : 'POST',
-	        url         : 'id/ajax_set_deactivate_user', 
+	        url         : 'deactivate_user', 
 	        data        : PostData, 
 	        dataType    : 'json', 
 	        success: function(data){
@@ -55,3 +55,10 @@ $('.set-user-activ').click(function() {
 			}
 	    })	 
 });
+
+function openModal_user() {
+    $('#modal-user').show();
+}
+function closeModal_user() {
+	$('#modal-user').hide();
+}

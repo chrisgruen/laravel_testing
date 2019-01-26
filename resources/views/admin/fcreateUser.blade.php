@@ -1,8 +1,5 @@
 @extends('layout.master')
 @section('content')
-
-<div class="container">
-
 <div class="container" id="manage-users">
 	<div class="col-md-8 mx-auto">
 		<div class="panel panel-default">
@@ -77,7 +74,5 @@
 		</div>
 	</div>
 </div>
-
-<script src="{{ url('/js/custom_bottom_user.js') }}"></script>
 @endsection
 

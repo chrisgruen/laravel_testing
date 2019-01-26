@@ -1,8 +1,5 @@
 .container{
-	min-width: 1400px;
-	width: 90%;
-	max-width: 1900px;
-	clear: both;
+
 	margin-bottom: 50px;
 }
 
@@ -87,4 +84,26 @@ th, td {
 
 #manage-users .help-block{
 	color: red;
+}
+
+#modal-user {
+		display:    none;
+		position:   fixed;
+		z-index:    1000;
+		top:        0;
+		left:       0;
+		height:     100%;
+		width:      100%;
+		background: rgba( 255, 255, 255, .8 ) 
+                url('../img/ajax-loader.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+#manage-user .fa-check-circle {
+    color: #5cb85c;
+}
+
+#manage-user .fa-minus-circle{
+    color: #ee2c2c;
 }

@@ -1,7 +1,5 @@
 @extends('layout.master')
 @section('content')
-<meta name="csrf-token" content="{{ csrf_token() }}"> <!-- Needed to pass the token to use Ajax with POST ( Save expression function ) -->
-
 <div class="container" id="manage-user">
     <div class="row">
    		<table class="table table-striped table-bordered">
@@ -97,7 +95,6 @@
             </div>
         </div>
     </div>
-
-	
-<script src= "{{ url('/') }}/js/custom_bottom_user.js"></script>	
+    
+<script src="{{ url('/js/custom/custom_bottom_user.js') }}"></script>		
 @endsection
