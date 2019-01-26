@@ -22,13 +22,8 @@ class AdminController extends Controller
      */
     public function index(Request $request)
     {
+    	/* Searchfilter */
    		$user_query = User::query();
-   		if ($request->has('vtiger_org')) { 
-   			$vtiger_org = $request->vtiger_org;
-   			$user_query->whereHas('account', function ($query) use ($vtiger_org) {
-   				$query->where('Organization_name', 'like', "%$vtiger_org%");
-   			})->get();
-   		}
    		if ($request->has('nick_name')) {
    			$user_query->where('name', 'like', "%$request->nick_name%");
    		}
