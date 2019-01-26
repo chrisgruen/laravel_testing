@@ -1,0 +1,17 @@
+header{
+	min-height: 100px;	
+	margin-bottom: 25px;
+}
+footer {
+    position: fixed;
+    height: 30px;
+    left: 0;
+    right: 0;
+    width: auto;
+    bottom: 0;
+    color: #fff;
+    background-color: #343a40;
+    margin-top: 8px;
+    padding-top: 5px;
+    z-index: 999;
+}

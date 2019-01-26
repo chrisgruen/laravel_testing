@@ -4,6 +4,7 @@
     </IfModule>
 
     RewriteEngine On
+    RewriteBase /myWeb/laravel/laravel_testing1/public/
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
