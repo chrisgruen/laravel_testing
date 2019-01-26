@@ -17,16 +17,18 @@ Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'PagesController@contact');
 Route::get('/logout', 'AdminController@logout');
 
-Route::get('/admin_users', 'AdminController@index');
-Route::get('/admin_users/create_user', 'AdminController@form_create_user');
-Route::post('/create_user', 'AdminController@create_user');
-
-
-
 Route::group(['middleware' => 'web'], function () {
 	Route::auth();
 	Route::get('/services', 'PagesProtectedController@services');
-	//Route::get('/admin', 'AdminController@index');
+	
+	Route::get('/admin_users', 'AdminController@index');
+	Route::get('/admin_users/show/{user_id}', 'AdminController@show_user');
+	Route::get('/admin_users/create_user', 'AdminController@form_create_user');
+	Route::get('/admin_users/edit/{user_id}', 'AdminController@form_edit_user');
+	Route::post('/admin_users/create_user', 'AdminController@create_user');
+	Route::post('/admin_users/edit_user/{user_id}', 'AdminController@edit_user');
+	
+	
 	
 	/*
 	 Route::group(['middleware' => ['admin']], function() {

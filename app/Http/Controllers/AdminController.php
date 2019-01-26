@@ -13,7 +13,7 @@ class AdminController extends Controller
 
     public function __construct()
     {
-       // $this->middleware('auth');
+        $this->middleware('auth');
     	$this->item_per_page = 15;
     }
 
@@ -92,6 +92,58 @@ class AdminController extends Controller
     	$user->save();
 
     	return redirect('admin');
+    }
+    
+    /**
+     * View form Create a new user.
+     */
+    public function show_user($user_id)
+    {
+    	$user = User::where('id', $user_id)->first();
+    	return view('admin.showUser', compact('user'));
+    }
+    
+    /**
+     * View form update account.
+     */
+    public function form_edit_user($user_id)
+    {
+    	$user = User::where('id', $user_id)->first();
+    	return view('admin.feditUser', compact('user'));
+    }
+    
+    /**
+     * Process create a new user.
+     */
+    public function edit_user(Request $request, $userId)
+    {   	 
+    	/* Validationhandling */
+    	$this->validate($request, [
+    			'name' => 'required|max:255',
+    			'email' => 'required|email|max:255',
+    	]);
+    	
+    	$user = USER::where('id', $userId)->first();
+    	
+    	/* Update User */
+    	$user->update(['name' => $request->name]);
+		$user->update(['last_name' => $request->last_name]);
+		$user->update(['first_name' => $request->first_name]);		
+		/* set User active = (1,0) */
+		if($request->has('active')){
+			$user->update(['active' => 1]);
+		} else {
+			$user->update(['active' => 0]);
+		}		
+		/* update Password  */
+		if(strlen($request->password) > 2){
+			$this->validate($request, [
+					'password' => 'required|min:6',
+			]);
+			$user->update(['password' => bcrypt(request()->password)]);
+		}    	 
+    
+    	return redirect('/admin_users/show/'.$user->id);
     }
     
     /**
