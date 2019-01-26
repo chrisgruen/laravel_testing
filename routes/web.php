@@ -15,8 +15,10 @@ Route::get('welcome', function () {return view('welcome');});
 Route::get('/', 'PagesController@homepublic');
 Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'PagesController@contact');
-Route::get('/admin', 'AdminController@index');
-Route::get('/form_create_user', 'AdminController@form_create_user');
+Route::get('/logout', 'AdminController@logout');
+
+Route::get('/admin_users', 'AdminController@index');
+Route::get('/admin_users/create_user', 'AdminController@form_create_user');
 Route::post('/create_user', 'AdminController@create_user');
 
 

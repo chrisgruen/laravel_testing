@@ -8,7 +8,7 @@
    			<form class="form-horizontal" method="POST" action="{{ url('/users') }}">
    			{!! csrf_field() !!}
    			<tr>
-   				<th>Nick name <a href="{{ url('/form_create_user') }}" title="Add user"><i class="fa fa-plus-square" aria-hidden="true"></i></a></th>
+   				<th>Nick name <a href="{{ url('/admin_users/create_user') }}" title="Add user"><i class="fa fa-plus-square" aria-hidden="true"></i></a></th>
    				<th>Last name</th>
    				<th>First name</th>
    				<th>Email</th>
@@ -45,10 +45,10 @@
    				<td>{{$user->email}}</td>
    				<td>{{$user->created_at}}</td>
    				<td>
-   					<a data-pjax="0" aria-label="Anzeigen" title="Anzeigen" href="{{ $user->path() }}">
+   					<a title="Show" href="{{url('admin_users') }}/show/{{$user->id }}">
    						<i class="fa fa-eye" aria-hidden="true"></i>
 					</a>
-					<a data-pjax="0" aria-label="Bearbeiten" title="Bearbeiten" href="{{ $user->pathUpdate() }}">
+					<a  title="Edit" href="{{url('admin_users') }}/edit/{{$user->id }}">
 						<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 					</a>
 					@if($user->active == 1)

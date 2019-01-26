@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Http\Request;
 use App\Http\Requests;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 
 
@@ -71,8 +73,32 @@ class AdminController extends Controller
      */
     public function create_user(Requests\UserRequest $request)
     {
-    	dd($request->all());
-    	return view('admin.fcreateUser');
+    	
+    	/* Create a new user */
+    	$user = new User();
+    	$user->name = $request->name;
+    	$user->email = $request->email;
+    	$user->last_name = $request->last_name;
+    	$user->first_name = $request->first_name;
+    	$user->password = bcrypt($request->password);
+    	$user->remember_token = Str::random(60);
+    	
+    	if($request->has('active')){
+    		$user->active = 1;
+    	} else {
+    		$user->active = 0;
+    	}
+    	
+    	$user->save();
+
+    	return redirect('admin');
     }
     
+    /**
+     * Process logout userr.
+     */    
+    public function logout(){
+    	Auth::logout();
+    	return redirect('login');
+    }
 }
