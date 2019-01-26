@@ -61,6 +61,14 @@
 					</div> 
  					<div class="form-group">
 						<div class="row">
+							<label class="col-md-4 control-label">Active</label>
+	 						<div class="col-md-6">
+								<input id="active" name="active" type="checkbox" checked="checked">
+	 						</div>
+						</div>
+					</div> 
+ 					<div class="form-group">
+						<div class="row">
 							<label class="col-md-4 control-label"></label>
 	 						<div class="col-md-6">
 								<button type="submit" class="btn btn-primary">

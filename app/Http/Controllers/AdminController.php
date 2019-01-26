@@ -86,7 +86,7 @@ class AdminController extends Controller
     	
     	$user->save();
 
-    	return redirect('admin');
+    	return redirect('/admin_users/show/'.$user->id);
     }
     
     /**
