@@ -16,12 +16,15 @@ Route::get('/', 'PagesController@homepublic');
 Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'PagesController@contact');
 Route::get('/admin', 'AdminController@index');
+Route::get('/form_create_user', 'AdminController@form_create_user');
+Route::post('/create_user', 'AdminController@create_user');
+
 
 
 Route::group(['middleware' => 'web'], function () {
 	Route::auth();
 	Route::get('/services', 'PagesProtectedController@services');
-	Route::get('/admin', 'AdminController@index');
+	//Route::get('/admin', 'AdminController@index');
 	
 	/*
 	 Route::group(['middleware' => ['admin']], function() {

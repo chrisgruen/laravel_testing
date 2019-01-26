@@ -1,3 +1,11 @@
+.container{
+	min-width: 1400px;
+	width: 90%;
+	max-width: 1900px;
+	clear: both;
+	margin-bottom: 50px;
+}
+
 header{
 	min-height: 100px;	
 	margin-bottom: 25px;
@@ -14,4 +22,69 @@ footer {
     margin-top: 8px;
     padding-top: 5px;
     z-index: 999;
+}
+
+th, td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.panel {
+    margin-bottom: 20px;
+    margin-left: 1px;
+    background-color: #ddd;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    width: 100%;
+}
+
+.panel-default > .panel-heading {
+    background-color: #3490dc;
+    border-color: #ddd;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.panel-heading {
+    font-weight: bold;
+    padding: 10px 15px;
+	border-bottom: 1px solid transparent;
+    border-bottom-color: transparent;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+#start_date, #end_date {
+    position: relative;
+    height: 20px;
+    display: block;
+}
+
+#start_date input {
+    height: 20px;
+    width: 70%;
+    float: right;
+    font-size: 10px;
+    padding: 1px 4px;
+}
+
+#end_date input {
+    height: 20px;
+    width: 70%;
+    float: right;
+    margin-top: -10px;
+    font-size: 10px;
+    padding: 1px 4px;
+    margin-top: 2px;
+}
+
+.control-label{
+	text-align: right;
+	font-weight: bold;
+}
+
+#manage-users .help-block{
+	color: red;
 }
