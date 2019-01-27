@@ -1,24 +1,26 @@
 .container{
-
 	margin-bottom: 50px;
+}
+
+#mainNav > .container{
+	margin-bottom: 0px;
+}
+
+.navbar {
+	
 }
 
 header{
 	min-height: 100px;	
 	margin-bottom: 25px;
 }
+
 footer {
-    position: fixed;
     height: 30px;
-    left: 0;
-    right: 0;
-    width: auto;
-    bottom: 0;
+    margin-top: 25px;
+    padding-top: 2px;
     color: #fff;
     background-color: #343a40;
-    margin-top: 8px;
-    padding-top: 5px;
-    z-index: 999;
 }
 
 th, td {
@@ -58,7 +60,9 @@ th, td {
 }
 
 .card{
-	}
+	margin-bottom: 30px;
+}
+
 .card-title{
 	background-color: #3490dc;
     font-weight: bold;

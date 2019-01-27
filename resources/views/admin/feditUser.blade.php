@@ -70,8 +70,8 @@
 					</div> 
 				</form>
 			</div>
+			<a href="{{ url()->previous() }}" class="btn btn-default"><< Back</a>
 		</div>
-		<a href="{{ url()->previous() }}" class="btn btn-default">Back</a>
 	</div>
 </div>
 @endsection
