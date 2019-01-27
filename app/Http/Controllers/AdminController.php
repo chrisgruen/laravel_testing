@@ -24,16 +24,16 @@ class AdminController extends Controller
     {
     	/* Searchfilter */
    		$user_query = User::query();
-   		if ($request->has('nick_name')) {
+   		if ($request->has('nick_name') && $request->nick_name != '') {
    			$user_query->where('name', 'like', "%$request->nick_name%");
    		}
-   		if ($request->has('last_name')) {
+   		if ($request->has('last_name') && $request->last_name != '') {
    			$user_query->where('last_name', 'like', "%$request->last_name%");
    		}
-   		if ($request->has('first_name')) {
+   		if ($request->has('first_name') && $request->first_name != '') {
    			$user_query->where('first_name', 'like', "%$request->first_name%");
    		}
-   		if ($request->has('email')) {
+   		if ($request->has('email') && $request->email != '') {
    			$user_query->where('email', 'like', "%$request->email%");
    		}
    	   	if($request->has('user_start_date') && $request->user_start_date != '' ){

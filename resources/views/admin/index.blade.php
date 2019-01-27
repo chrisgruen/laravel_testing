@@ -74,6 +74,17 @@
     }}
 </div>
 
-<div id="modal-user"></div>   
+<div id="modal-user"></div>  
+
+<style>
+$(function () {
+	$('#user_datetimepicker_start').datetimepicker({
+		format: 'YYYY-MM-DD'
+	});
+	$('#user_datetimepicker_end').datetimepicker({
+		format: 'YYYY-MM-DD'
+	});
+});
+</style> 
 <script src="{{ url('/js/custom/custom_bottom_user.js') }}"></script>		
 @endsection

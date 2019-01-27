@@ -13,11 +13,14 @@
 	 <!-- Styles -->
     <link href="{{ url('/css/app.css') }}" rel="stylesheet">
     <link href="{{ url('/css/style.css') }}" rel="stylesheet">
+    <link href="{{ url('/css/bootstrap_datepicker.css') }}" rel="stylesheet">
 
 	<!-- JS -->
 	<script src="{{ url('/js/app.js') }}"></script>
+
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 	<script src="{{ url('/') }}/js/moment.js"></script>
-	<script src="{{ url('/') }}/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="{{ url('/') }}/js/bootstrap-datetimepicker.js"></script>
 </head>
 
     <body>
