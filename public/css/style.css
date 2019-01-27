@@ -53,6 +53,28 @@ th, td {
 	border-top-right-radius: 3px;
 }
 
+.card{
+	}
+.card-title{
+	background-color: #3490dc;
+    font-weight: bold;
+    padding: 10px 15px;
+	border-bottom: 1px solid transparent;
+    border-bottom-color: transparent;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;	
+}
+
+.card-footer{
+	background-color: #3490dc;
+    font-weight: bold;
+    padding: 10px 15px;
+	border-bottom: 1px solid transparent;
+    border-bottom-color: transparent;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;	
+}
+
 #start_date, #end_date {
     position: relative;
     height: 20px;

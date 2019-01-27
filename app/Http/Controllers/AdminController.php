@@ -90,6 +90,17 @@ class AdminController extends Controller
     }
     
     /**
+     * Process delete user.
+     */
+    public function delete_user($user_id)
+    {   	
+    	if(User::count() > 1){
+    		User::destroy($user_id);
+    	}
+    	return redirect('/admin_users');
+    }
+    
+    /**
      * View detail user.
      */
     public function show_user($user_id)

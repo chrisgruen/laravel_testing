@@ -3,10 +3,10 @@
 <div class="container" id="manage-user">
     <div class="row">
    		<table class="table table-striped table-bordered">
-   			<form class="form-horizontal" method="POST" action="{{ url('/users') }}">
+   			<form class="form-horizontal" method="POST" action="{{ url('/admin_users') }}">
    			{!! csrf_field() !!}
    			<tr>
-   				<th>Nick name <a href="{{ url('/admin_users/create_user') }}" title="Add user"><i class="fa fa-plus-square" aria-hidden="true"></i></a></th>
+   				<th>Nick name <a href="{{ url('/admin_users/create') }}" title="Add user"><i class="fa fa-plus-square" aria-hidden="true"></i></a></th>
    				<th>Last name</th>
    				<th>First name</th>
    				<th>Email</th>
@@ -74,27 +74,6 @@
     }}
 </div>
 
-<div id="modal-user"></div>
-<!-- Modal -->
-    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-				<div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">Confirm deletion</h4>
-                </div>
-				<div class="modal-body">
-                    <p>You are about to delete one track, this procedure is irreversible.</p>
-                    <p>Do you want to proceed?</p>
-                    <p class="debug-url"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-danger btn-ok">Delete</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
+<div id="modal-user"></div>   
 <script src="{{ url('/js/custom/custom_bottom_user.js') }}"></script>		
 @endsection
